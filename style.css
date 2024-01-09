@@ -1,0 +1,44 @@
+:root {
+  --clr-primary-300: hsl(249, 99%, 64%);
+  --clr-primary-200: hsl(278, 94%, 30%);
+  --clr-primary-100: hsl(0, 100%, 66%);
+  --clr-neutral-800: hsl(278, 68%, 11%);
+  --clr-neutral-500: hsl(279, 6%, 55%);
+  --clr-neutral-300: hsl(270, 3%, 87%);
+  --clr-neutral-200: hsl(0, 0%, 100%);
+
+  --gradient-primary: linear-gradient(
+    var(--clr-primary-300),
+    var(--clr-primary-200)
+  );
+
+  --font-family-default: "Space Grotesk", sans-serif;
+
+  --fs-base: 18px;
+
+  --fw-regular: 500;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--font-family-default);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-base);
+  line-height: 1.5;
+}
