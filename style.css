@@ -155,7 +155,7 @@ input:focus {
   border-color: var(--gradient-primary);
 }
 
-.input-error {
+.card-cvc {
   border-color: var(--clr-primary-100);
 }
 
