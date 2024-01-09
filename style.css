@@ -63,8 +63,12 @@ main {
 }
 
 .card-wrapper {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  top: 5vh;
+  top: 50%;
+  right: -10vw;
+  transform: translate(0, -50%);
 }
 
 .card {
@@ -102,6 +106,7 @@ main {
   background-repeat: no-repeat;
   height: 25vh;
   position: relative;
+  margin-left: 3.5em;
 }
 
 .card-cvc {
