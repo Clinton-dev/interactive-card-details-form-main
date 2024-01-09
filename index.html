@@ -18,6 +18,7 @@
     .attribution {
       font-size: 11px;
       text-align: center;
+      display: none;
     }
 
     .attribution a {
@@ -28,8 +29,24 @@
 
 <body>
   <main>
-    <div class="left-side" >
-      <img class="bg-desktop" src="./images/bg-main-desktop.png" alt="">
+    <div class="left-side">
+      <img class="bg-desktop-image" src="./images/bg-main-desktop.png" alt="">
+      <img class="bg-mobile-image" src="./images/bg-mobile-desktop.png" alt="">
+      <div class="card-wrapper">
+        <div class="card card-front">
+          <div class="card-logo">
+            <img src="./images/card-logo.svg" alt="">
+          </div>
+          <p class="card-number">0000 0000 0000 0000</p>
+          <div class="card-user-details">
+            <p>Jane Appleseed</p>
+            <p><span id="card-month">00</span> / <span id="card-year">00</span></p>
+          </div>
+        </div>
+        <div class="card card-back">
+          <p class="card-cvc">000</p>
+        </div>
+      </div>
     </div>
     <div class="right-side">
       <form>
@@ -75,26 +92,9 @@
         <button class="btn confirm-btn">Confirm</button>
       </form>
     </div>
+
+
   </main>
-  <div class="card">
-    <div class="card-front">
-      <div class="">
-        <img src="" alt="">
-      </div>
-      <p class="card-number">0000 0000 0000 0000</p>
-      <div>
-        <p>Jane Appleseed</p>
-        <p><span id="card-month">00</span> / <span id="card-year">00</span></p>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
