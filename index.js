@@ -36,3 +36,6 @@ mmYy.addEventListener("change", () => {
 cvc.addEventListener("change", () => {
   cardVcv.textContent = cvc.value;
 });
+
+
+// Add check for input elements after pressing the submit button
