@@ -114,7 +114,7 @@ main {
   position: absolute;
   top: 50%;
   right: 10%;
-  transform: translate(0, -50%);
+  transform: translate(0, -10%);
 }
 
 .right-side {
@@ -160,6 +160,7 @@ input:focus {
 }
 
 .error-msg {
+  padding-top: 0.75em;
   color: var(--clr-primary-100);
 }
 
@@ -169,6 +170,19 @@ input::placeholder {
 
 .success-container {
   display: none;
+  text-align: center;
+  color: var(--clr-neutral-500);
+}
+
+.success-title {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  color: var(--clr-neutral-800);
+  font-size: 2rem;
+}
+
+.success-text {
+  margin-bottom: 1em;
 }
 
 .btn {

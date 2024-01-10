@@ -11,6 +11,8 @@ const expDate = document.getElementById("exp-date");
 const mmYy = document.getElementById("mm-yy");
 const cvc = document.getElementById("cvc");
 
+const confirmBtn = document.getElementById("confirm-btn");
+
 holderName.addEventListener("change", () => {
   let name = holderName.value;
   if (name == "") {
@@ -37,5 +39,38 @@ cvc.addEventListener("change", () => {
   cardVcv.textContent = cvc.value;
 });
 
+confirmBtn.addEventListener("click", (e) => {
+  e.preventDefault();
 
-// Add check for input elements after pressing the submit button
+  const formFields = {
+    "holder-name": { element: holderName, errorMessage: "" },
+    "holder-card-number": { element: holderCardNumber, errorMessage: "" },
+    "exp-date": { element: expDate, errorMessage: "" },
+    "mm-yy": { element: mmYy, errorMessage: "" },
+    cvc: { element: cvc, errorMessage: "" },
+  };
+
+  let allFieldsValid = true;
+
+  for (const fieldName in formFields) {
+    console.log(fieldName.element);
+    const field = formFields[fieldName];
+    const errorElement = document.getElementById(`${fieldName}-error`);
+    console.log(field.element.value);
+
+    // check if inputs are empty
+    if (!field.element.value) {
+      allFieldsValid = false;
+      errorElement.textContent = "Can't be blank";
+      errorElement.classList.add("error-msg");
+    } else {
+      errorElement.textContent = "";
+      errorElement.classList.remove("error-msg");
+    }
+  }
+
+  if (allFieldsValid) {
+    document.getElementById("form-elements").style.display = "none";
+    document.getElementById("success-container").style.display = "block";
+  }
+});
