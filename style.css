@@ -45,17 +45,46 @@ body {
   height: 100vh;
 }
 
-.bg-mobile-image {
+.bg-desktop-image {
   display: none;
+}
+
+.bg-mobile-image {
+  width: 100%;
+}
+
+@media (width > 900px) {
+  .bg-desktop-image {
+    display: block;
+    height: 100%;
+  }
+
+  .bg-mobile-image {
+    display: none;
+  }
 }
 
 main {
   height: 100%;
   display: flex;
+  flex-direction: column;
+}
+
+@media (width > 900px) {
+  main {
+    flex-direction: row;
+  }
 }
 
 .left-side {
   position: relative;
+  height: 50%;
+}
+
+@media (width > 900px) {
+  .left-side {
+    height: 100%;
+  }
 }
 
 .bg-desktop-image {
@@ -64,26 +93,49 @@ main {
 
 .card-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   position: absolute;
-  top: 50%;
-  right: -10vw;
-  transform: translate(0, -50%);
+  top: 0;
+  right: 5vw;
+}
+
+@media (width> 900px) {
+  .card-wrapper {
+    flex-direction: column;
+    top: 50%;
+    right: -10vw;
+    transform: translate(0, -50%);
+  }
 }
 
 .card {
   --card-padding: 1em;
   padding: var(--card-padding);
   border-radius: 0.25rem;
-  width: 25vw;
-  aspect-ratio: 2.5;
+  width: 70vw;
+  aspect-ratio: 1.5;
+}
+
+@media (width > 900px) {
+  .card {
+    width: 25vw;
+    aspect-ratio: 2.5;
+  }
 }
 
 .card-front {
   background-image: url("./images/bg-card-front.png");
   background-size: cover;
   background-repeat: no-repeat;
-  margin-bottom: 1em;
+  margin-top: -25%;
+  z-index: 99;
+}
+
+@media (width > 900px) {
+  .card-front {
+    margin: 0;
+    margin-bottom: 1em;
+  }
 }
 
 .card-logo {
@@ -91,7 +143,13 @@ main {
 }
 
 .card-number {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+}
+
+@media (width> 900px) {
+  .card-number {
+    font-size: 1.75rem;
+  }
 }
 
 .card-user-details {
@@ -104,7 +162,6 @@ main {
   background-image: url("./images/bg-card-back.png");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 25vh;
   position: relative;
   margin-left: 3.5em;
 }
@@ -113,8 +170,20 @@ main {
   color: var(--clr-neutral-200);
   position: absolute;
   top: 50%;
-  right: 10%;
-  transform: translate(0, -10%);
+  right: 5%;
+  transform: translate(0, -40%);
+}
+
+@media (width > 900px) {
+  .card-back {
+    height: 25vh;
+  }
+
+  .card-cvc {
+    top: 50%;
+    right: 10%;
+    transform: translate(0, -10%);
+  }
 }
 
 .right-side {
@@ -126,9 +195,15 @@ main {
 
 form {
   width: 100%;
-  margin-left: 25vw;
   max-width: 500px;
-  padding: 0 1em;
+  padding: 0 2em;
+  margin-top: 8em;
+}
+
+@media (width > 900px) {
+  form {
+    margin-left: 25vw;
+  }
 }
 
 .form-group {
